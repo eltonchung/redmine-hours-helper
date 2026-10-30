@@ -1,0 +1,9 @@
+{
+  "redmine_url": "https://redmine.example.com",
+  "issue_id": 123,
+  "activity_id": 9,
+  "daily_hours": 8,
+  "comment": "Project coordination",
+  "holidays_file": "calendar.example.json",
+  "timeout_seconds": 20
+}

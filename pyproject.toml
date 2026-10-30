@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "redmine-hours-helper"
+version = "0.1.0"
+description = "Preview and fill daily Redmine time-entry gaps with a desktop GUI or CLI."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["requests>=2.32.4,<3"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Office/Business",
+  "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.11,<1", "build>=1.2,<2"]
+
+[project.scripts]
+redmine-hours = "redmine_hours_helper.cli:main"
+redmine-hours-gui = "redmine_hours_helper.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = [".local", "venv", ".venv"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

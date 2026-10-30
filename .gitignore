@@ -1,0 +1,31 @@
+# Private settings, credentials and legacy personal files
+.local/
+.env
+.env.*
+!.env.example
+*.local.json
+config.json
+calendar.json
+log.txt
+logs/
+*.log
+*.bak
+*.bak_*
+
+# Python and build output
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Editor / OS files
+.DS_Store
+.idea/
+.vscode/

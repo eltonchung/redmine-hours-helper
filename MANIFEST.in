@@ -1,0 +1,9 @@
+include README.md CONTRIBUTING.md CHANGELOG.md
+include config.example.json calendar.example.json
+include fill_hours.py gui_tkinter.py run_gui.sh
+recursive-include tests *.py
+recursive-include docs *.png
+prune .local
+prune venv
+prune .venv
+global-exclude *.local.json *.log *.bak *.bak_* *.py[cod] .DS_Store
