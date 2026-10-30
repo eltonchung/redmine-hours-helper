@@ -285,6 +285,6 @@ Possible future improvements: OS keychain integration, official-calendar import,
 
 ## 授權 / License
 
-授權條款尚待維護者選定，目前未附 `LICENSE` 檔案。
+本專案採用 **MIT License**，著作權為 © 2026 eltonchung。允許使用、修改、散布及商業使用，但必須保留著作權與授權聲明。軟體以現狀提供，不附任何擔保。完整條款請參閱 [LICENSE](LICENSE)。
 
-The maintainer has not yet selected a license; this repository currently does not include a `LICENSE` file.
+This project is licensed under the **MIT License**, copyright © 2026 eltonchung. Use, modification, distribution, and commercial use are permitted, provided the copyright and permission notices are retained. The software is provided "as is", without warranty. See [LICENSE](LICENSE) for the full terms.

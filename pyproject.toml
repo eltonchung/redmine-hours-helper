@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77.0.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -7,6 +7,8 @@ name = "redmine-hours-helper"
 version = "0.1.0"
 description = "Preview and fill daily Redmine time-entry gaps with a desktop GUI or CLI."
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.11"
 dependencies = ["requests>=2.32.4,<3"]
 classifiers = [

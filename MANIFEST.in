@@ -1,4 +1,4 @@
-include README.md CONTRIBUTING.md CHANGELOG.md
+include LICENSE README.md CONTRIBUTING.md CHANGELOG.md
 include config.example.json calendar.example.json
 include fill_hours.py gui_tkinter.py run_gui.sh
 recursive-include tests *.py
