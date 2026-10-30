@@ -150,6 +150,8 @@ python fill_hours.py --year 2026 --month 10 --dry-run
 
 You can replace `redmine-hours` with `python -m redmine_hours_helper`. Omitted year/month use the computer's local date. `--yes` requires `--apply`; it skips only the confirmation prompt, not preview, validation, or rechecking.
 
+命令列輸出採 UTF-8；儲存或讀取重導向輸出時也請使用 UTF-8。 CLI output uses UTF-8; use UTF-8 when saving or reading redirected output.
+
 結束碼 / Exit codes: `0` 成功或使用者取消 / success or declined confirmation; `1` 設定、API 或部分執行失敗 / configuration, API, or partial-run failure; `2` 參數錯誤 / invalid arguments; `130` 中斷 / interrupted.
 
 ## 行事曆規則 / Calendar rules
@@ -230,6 +232,7 @@ src/redmine_hours_helper/
 ├── __main__.py       # Python module entry point
 ├── cli.py            # Argument parsing and terminal output
 ├── config.py         # Validated non-secret settings
+├── console.py        # UTF-8 output for bilingual terminal messages
 ├── calendar.py       # Year-specific working-day rules
 ├── redmine.py        # HTTPS API, pagination and response validation
 ├── service.py        # Preview, recheck, apply and result models

@@ -3,6 +3,8 @@
 import argparse
 from pathlib import Path
 
+from ..console import configure_console
+
 
 def launch(config_path: Path, *, demo: bool = False) -> int:
     try:
@@ -25,6 +27,7 @@ def launch(config_path: Path, *, demo: bool = False) -> int:
 
 
 def main(argv=None) -> int:
+    configure_console()
     parser = argparse.ArgumentParser(description="Redmine Hours Helper GUI")
     parser.add_argument("--config", type=Path, default=Path("config.local.json"))
     parser.add_argument("--demo", action="store_true", help="離線示範 / Offline demo")

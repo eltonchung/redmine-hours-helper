@@ -2,6 +2,8 @@ import contextlib
 import io
 import json
 import os
+import subprocess
+import sys
 import tempfile
 import unittest
 from decimal import Decimal
@@ -45,6 +47,21 @@ class CommandLineTests(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertIn("Planned: 40.00 h", output)
         self.client.create_entry.assert_not_called()
+
+    def test_bilingual_help_survives_legacy_console_encoding(self):
+        env = {**os.environ, "PYTHONIOENCODING": "cp1252"}
+        for args in (
+            ["-m", "redmine_hours_helper", "--help"],
+            ["-c", "from redmine_hours_helper.gui import main; main(['--help'])"],
+        ):
+            with self.subTest(args=args):
+                result = subprocess.run(
+                    [sys.executable, *args], env=env, capture_output=True, timeout=10
+                )
+                self.assertEqual(
+                    result.returncode, 0, result.stderr.decode("utf-8", errors="replace")
+                )
+                self.assertIn("離線", result.stdout.decode("utf-8"))
 
     def test_noninteractive_apply_requires_yes(self):
         code, _ = self.run_cli("--apply")

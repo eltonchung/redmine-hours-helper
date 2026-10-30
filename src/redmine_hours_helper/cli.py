@@ -10,6 +10,7 @@ from pathlib import Path
 from . import __version__
 from .calendar import WorkCalendar
 from .config import ConfigError, load_settings, validate_api_key
+from .console import configure_console
 from .logging_setup import configure_logging
 from .redmine import RedmineClient, RedmineError
 from .service import STATUS_LABELS, HoursService, Status
@@ -60,6 +61,7 @@ def print_rows(rows) -> None:
 
 
 def main(argv=None) -> int:
+    configure_console()
     parser = build_parser()
     args = parser.parse_args(argv)
     if args.gui:
